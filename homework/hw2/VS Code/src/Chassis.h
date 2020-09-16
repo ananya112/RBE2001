@@ -1,4 +1,6 @@
+#include <Arduino.h>
 #include <Romi32U4.h>
+#include <math.h>
 class Chassis
 {
 public:

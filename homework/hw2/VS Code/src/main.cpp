@@ -1,14 +1,15 @@
 #include <Arduino.h>
 #include <Romi32U4.h>
-const int delayTime = 200;
-
+#include <Chassis.h>
+Romi32U4Motors motors;
 void setup() {
-  pinMode(13,OUTPUT);
+  // put your setup code here, to run once:
 }
-
+//hopefully I did this right
 void loop() {
-  digitalWrite(12,HIGH);
-  delay(delayTime);
-  digitalWrite(13,LOW);
-  delay(delayTime);
+  motors.setEfforts(100,100);
+  delay(1000);
+  motors.setEfforts(0,0);
+  delay(1000);
+  // put your main code here, to run repeatedly:
 }
