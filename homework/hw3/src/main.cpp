@@ -1,6 +1,11 @@
 #include <Arduino.h>
 #include <Rangefinder.h>
+#include <chassis.h>
+
 Rangefinder rangefinder;
+Chassis chassis;
+
+Romi32U4Motors motors;
 
 void setup() {
     rangefinder.setup();
@@ -17,6 +22,4 @@ void loop() {
     robot.turnAngle(100);
     delay(250);
   }
-
-
 }

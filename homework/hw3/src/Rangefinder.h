@@ -7,4 +7,10 @@ class Rangefinder{
     void setup();
     void loop();
     float getDistanceCM();
+
+
+    private:
+    float distance;
+
 };
+
