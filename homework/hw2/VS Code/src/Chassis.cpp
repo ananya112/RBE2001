@@ -8,11 +8,11 @@
 
 void Chassis::driveDistance(float inches)
 {
-float ticks_to_inch = (float)((wheelDiameter*M_PI)/CPR);//This is inch per ticks constant
+float ticks = (float)((diameter*M_PI)/CPR);//This is inch per ticks constant
 
 encoders.getCountsAndResetLeft();
 encoders.getCountsAndResetRight();
-while((encoders.getCountsLeft()<(ticks_to_inch)*inches)&&(encoders.getCountsRight()<(ticks_to_inch)*inches)){    
+while((encoders.getLeftCounts()<(ticks)*inches)&&(encoders.getRightCounts()<(ticks)*inches)){    
  motors.setEfforts(100, 100);
 }
  motors.setEfforts(0, 0);
@@ -26,7 +26,7 @@ void Chassis::turnAngle(float degrees)
     float degpertick = (float)(wheelTrack*M_PI*(wheelDiameter*M_PI)/2/CPR);//Obviously degrees per tick
     encoders.getCountsAndResetLeft();
     encoders.getCountsAndResetRight();
-    while((encoders.getCountsLeft()<degpertick*degrees)&&(encoders.getCountsRight()<degpertick*degrees)){
+    while((encoders.getLeftCounts()<degpertick*degrees)&&(encoders.getRightCounts()<degpertick*degrees)){
  motors.setEfforts(100, -100);
     }
     motors.setEfforts(0, 0);
